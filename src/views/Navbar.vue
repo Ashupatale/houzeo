@@ -3,7 +3,9 @@
   <div >
     <nav class="navbar navbar-expand-lg row mb-2 container mx-auto">
       <div class="container-fluid first-nav">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">
+          <img src="@/assets/Logo.svg"/>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -159,7 +161,10 @@ export default {
 .Navbar {
   box-shadow: 0px 3px 5px #4e4e4e26;
 }
-
+.navbar-brand img{
+  width:100px;
+  height:34px;
+}
 .form-btn {
   background: transparent linear-gradient(270deg, #0e5293 0%, #2876c1 100%) 0%
     0% no-repeat padding-box;
@@ -174,7 +179,7 @@ export default {
   height: 38px;
 }
 .navbar-brand {
-  margin-right: 80px;
+  margin-right: 50px;
 }
 .nav-link {
   font-size: 14px;
