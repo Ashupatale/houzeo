@@ -31,12 +31,9 @@
                 Product
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action......</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
+                <li><a class="dropdown-item" href="#">Product</a></li>
+                <li><a class="dropdown-item" href="#">Product details</a></li>
+                
               </ul>
             </li>
             <li class="nav-item nav-class">
@@ -57,8 +54,9 @@
                 Buy
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action......</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Product</a></li>
+                <li><a class="dropdown-item" href="#">Product details</a></li>
+                
               </ul>
             </li>
             <li class="nav-item nav-class dropdown">
@@ -73,8 +71,9 @@
                 Sell
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action......</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Product</a></li>
+                <li><a class="dropdown-item" href="#">Product details</a></li>
+                
               </ul>
             </li>
             <li class="nav-item nav-class">
@@ -92,8 +91,9 @@
                 Resources
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action......</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Product</a></li>
+                <li><a class="dropdown-item" href="#">Product details</a></li>
+                
               </ul>
             </li>
             <li class="nav-item nav-class">
@@ -107,7 +107,10 @@
               >
             </li>
           </ul>
-          <button class="form-btn" type="submit">Start Free Listing</button>
+          <div class="Btndiv">
+          <button class="form-btn" type="submit">Start Free Listing  
+</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -129,15 +132,15 @@
       </div>
       <div class="d-flex justify-content-between">
         <div>
-          <span style="margin-right: 8px">4</span>
+          <span style="margin-right: 8px" class="fw-bold">4</span>
           <p>Beds</p>
         </div>
         <div>
-          <span style="margin-right: 8px">3</span>
+          <span style="margin-right: 8px" class="fw-bold">3</span>
           <p>Bath</p>
         </div>
         <div>
-          <span style="margin-right: 8px">998</span>
+          <span style="margin-right: 8px" class="fw-bold">998</span>
           <p>sqft</p>
         </div>
       </div>
@@ -165,6 +168,9 @@ export default {
   width:100px;
   height:34px;
 }
+.Btndiv{
+ text-align: center;
+}
 .form-btn {
   background: transparent linear-gradient(270deg, #0e5293 0%, #2876c1 100%) 0%
     0% no-repeat padding-box;
@@ -177,6 +183,13 @@ export default {
   color: white;
   width: 146px;
   height: 38px;
+ 
+}
+.form-btn:hover{
+ 
+  background: transparent linear-gradient(270deg, #0b355f 0%, #0b355f 100%) 0%
+    0% no-repeat padding-box;
+
 }
 .navbar-brand {
   margin-right: 50px;
@@ -197,6 +210,9 @@ export default {
   height: 50px;
 }
 
+.offer-btn:hover{
+  background-color:#882906;
+}
 .offerBtn-div {
   text-align: right;
 }
@@ -208,6 +224,7 @@ export default {
   .form-btn {
     width: 176px;
     height: 50px;
+
   }
   .second-nav {
     display: none;

@@ -5,40 +5,40 @@
       aria-label="My Favorite Images"
     >
       <SplideSlide class="mt-2">
-        <p class="PersonDate">
+        <p class="PersonDate" @click="activetab = 1" :class="{activeBtn: activetab === 1}">
             <span class="spanText">Mon</span>
             <span class="number">09</span>
             <span class="spanText">May</span>
         </p>
       </SplideSlide>
-      <SplideSlide class="mt-2">
-        <p class="PersonDate">
+      <SplideSlide class="mt-2" >
+        <p class="PersonDate"  @click="activetab = 2" :class="{activeBtn: activetab === 2}">
             <span class="spanText">Tue</span>
             <span class="number">10</span>
             <span class="spanText">May</span>
         </p>      </SplideSlide>
       <SplideSlide class="mt-2">
-        <p class="PersonDate">
+        <p class="PersonDate"  @click="activetab = 3" :class="{activeBtn: activetab === 3}">
             <span class="spanText">Wed</span>
             <span class="number">11</span>
             <span class="spanText">May</span>
         </p>      </SplideSlide>
       <SplideSlide class="mt-2">
-         <p class="PersonDate">
+         <p class="PersonDate"  @click="activetab = 4" :class="{activeBtn: activetab === 4}">
             <span class="spanText">Thur</span>
             <span class="number">12</span>
             <span class="spanText">May</span>
         </p>
       </SplideSlide>
       <SplideSlide class="mt-2">
-         <p class="PersonDate">
+         <p class="PersonDate"  @click="activetab = 5" :class="{activeBtn: activetab === 5}">
             <span class="spanText">Fri</span>
             <span class="number">13</span>
             <span class="spanText">May</span>
         </p>
       </SplideSlide>
       <SplideSlide class="mt-2">
-         <p class="PersonDate">
+         <p class="PersonDate"  @click="activetab = 6" :class="{activeBtn: activetab === 6}">
             <span class="spanText">Sat</span>
             <span class="number">14</span>
             <span class="spanText">May</span>
@@ -97,6 +97,16 @@ export default {
     Splide,
     SplideSlide,
   },
+  data(){
+    return{
+      activetab:1,
+      activeButton: 'button1'
+    }
+  },
+
+  
+    
+  
   
   
 }
@@ -109,7 +119,18 @@ export default {
     border-radius: 10px;
     margin-right:10%;
     padding: 8px;
+    cursor: pointer;
 
+}
+.activeBtn{
+  border:1px solid black;
+  background-color: #EBEBF0;
+}
+.PersonDate:hover{
+  border:1px solid black;
+}
+.PersonTime:hover{
+  border:1px solid black;
 }
 .PersonDate span{
     display:block;
@@ -129,10 +150,12 @@ export default {
     border: 1px solid #00000033;
     height:36px;
     border-radius: 10px;
-    margin-right:10%;
+    margin-right:10%; 
     font-size: 14px;
     padding: 5px;
+    cursor: pointer;
 }
+
 .SplideTwo .splide__arrow--prev {
     display: none;
 }

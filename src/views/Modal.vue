@@ -5,7 +5,9 @@
     </div>
 
     <div class="popup-image">
-      <a  style="color: white">&times;</a>
+      <a @click="handleClose" style="color: white">&times;</a>
+      <!-- {{ dataSet }} -->
+      {{ dataType }}
       <span
         class="OfferSpan p-3"
         style="
@@ -17,7 +19,12 @@
         "
         >Make an offer</span
       >
-      <img src="@/assets/houseTwoo.jpg" />
+      <div v-if="dataType == 'image'">
+        <img :src="dataSet" />
+      </div>
+      <div v-else>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
+      </div>
     </div>
   </div>
 </template>
@@ -26,14 +33,34 @@
 export default {
   name: "modal-vue",
   isActive: "isActive",
-//   inject:['PopupValue'],
-//   isPopup:this.PopupValue,
+  //   inject:['PopupValue'],
+  //   isPopup:this.PopupValue,
 
-mounted(){
-    console.log("mounted", this.PopupValue)
-}
+  props: {
+    dataType: {
+      type: String,
+      default: "",
+    },
+    dataSet: {
+      type: Object,
+      default: function () {
+        return {};
+      },
+    },
+  },
+
+
+  mounted() {
+    console.log("mounted", this.PopupValue);
+  },
+
+  methods: {
+    handleClose() {
+      console.log("hit ");
+      this.$emit("handleClidData", "close");
+    },
+  },
 };
-
 </script>
 
 <style>

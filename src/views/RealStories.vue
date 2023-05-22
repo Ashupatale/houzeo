@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <div v-if="isPopup">
+      <Modal 
+        :data-type="dataType"
+        :data-set="dataSet"
+        @handleClidData="handleChildData"
+       />
+    </div>
     <div class="mt-4 MainDiv mb-4">
       <div class="DescriptionDiv col-lg-7">
         <div class="d-flex" style="justify-content: space-between">
@@ -112,21 +119,23 @@
             <h6 class="fw-bold">Real People. Real Stories.</h6>
             <p>See how buyers & sellers across America are saving on commission using Houzeo technology</p>
             <div class="d-flex">
-                <div class="IframeDive">
+                <div>
+                  <div  @click="showModal('https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1')">
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
 
                     </p>
                   </div>
-                <div class="IframeDive">
+                  </div>
+                <div>
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
 
                     </p>
                 </div>
-                <div class="IframeDive">
+                <div>
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
@@ -135,41 +144,67 @@
                 </div>
             </div>
 
-            <div class="d-flex mt-5">
-                <div class="IframeDive">
+            <div class="d-flex">
+                <div>
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
 
                     </p>
                   </div>
-                <div class="IframeDive">
+                <div>
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
 
                     </p>
                 </div>
-                <div class="IframeDive">
+                <div>
                     <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" class="IframeDive"></iframe>
                     <p class="userName">Jared Goldfarb
                         <span class="userPosition">Crestone, CO</span>
 
                     </p>
                 </div>
+                
             </div>
+            <a href="" class="viewText"> View All Stories</a>
+
         </div>
-        
+
       </div>
       
     </div>
-    
   </div>
 </template> 
 
 <script>    
+import Modal from '@/views/Modal.vue'
 export default {
   name: "realStories-vue",
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      isPopup: false,
+      dataSet: {},
+      dataType: 'video',
+    };
+  },
+  methods: {
+    showModal(data) {
+      this.dataType = 'video'
+      this.dataSet = data
+      this.isPopup = true;
+    },
+    handleChildData() {
+      this.isPopup = false;
+    },
+  
+  },
+
+
 };
 
 
@@ -177,6 +212,11 @@ export default {
 </script>
 
 <style>
+.viewText{
+  color:black;
+  float:right;
+  font-size: 14px;
+}
 .Span {
   background-color: #ebebf0;
   width: 90px;
@@ -194,6 +234,10 @@ export default {
 .Description span {
   font-size: 20px;
 }
+.Description p {
+  font-size: 16px;
+}
+
 .spansale {
   font-size: 14px;
   font-weight: bold;
@@ -212,9 +256,10 @@ export default {
 }
 .RealStoriesDiv {
   border: 1px solid #00000026;
-  height: 428px;
+  height: 500px;
   border-radius: 10px;
   padding: 10px;
+  
 }
 .MainDiv {
   display: flex;
@@ -228,6 +273,7 @@ export default {
 }
 .tableRow {
   background-color: #fafafc;
+  font-weight:bold;
 }
 .tableData {
   padding-left: 20%;
@@ -266,6 +312,27 @@ export default {
 @media (max-width: 1024px) {
   .MainDiv {
     display: block;
+  }
+  .RealStoriesDiv{
+    justify-content: center;
+    text-align: center;
+
+    height:auto;
+  }
+  .RealStoriesDiv .d-flex{
+     justify-content: center;
+    text-align: center;
+  }
+} 
+
+@media (min-width: 992px) and (max-width: 1199px) {  
+  .RealStoriesDiv {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .DescriptionDiv {
+    width: 100%;
+    margin-top: 5%;
   }
 }
 </style>
